@@ -1,0 +1,8 @@
+<section class="search-results mb-4">
+    <div class="text-center mb-4">Found 0 games</div>
+    <div class="row">
+        <% games.forEach(game => { %>
+            <%- include("shared/partials/user-card", {game}) %>
+        <% }) %>
+    </div>
+</section>
