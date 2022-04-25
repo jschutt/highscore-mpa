@@ -1,4 +1,10 @@
 <section>
-  <h1>Highscores</h1>
-  <p>Welcome to <%= title %></p>
+  <h1 class="text-center">Highscores</h1>
+  <div class="row">
+
+    <% users.forEach(user => { %>
+      <%- include("shared/partials/user-card.ejs", {user}) %>
+    <% }) %>
+
+  </div>
 </section>

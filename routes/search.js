@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
+/* GET http://localhost:3000/search */
 router.get("/", async function (req, res) {
   const searchTerm = req.query.q;
 
@@ -21,7 +22,8 @@ router.get("/", async function (req, res) {
 
   res.render("search", {
     title: "Search results",
-    games: result.rows
+    games: result.rows,
+    searchTerm
   });
 });
 
