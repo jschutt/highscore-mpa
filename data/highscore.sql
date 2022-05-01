@@ -14,8 +14,8 @@ CREATE TABLE game (
 CREATE TABLE users (
 	id INTEGER GENERATED ALWAYS AS IDENTITY,
 	first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    highscore INTEGER NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
+  highscore INTEGER NOT NULL,
 	highscore_date DATE NOT NULL,
 	PRIMARY KEY (id)
 );
