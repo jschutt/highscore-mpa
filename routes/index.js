@@ -8,6 +8,7 @@ router.get("/", async function (req, res) {
   const sql = `
     SELECT DISTINCT ON (game.title) 
                        game.title,
+                       game.url_slug,
                        users.username,
                        users.highscore,
                TO_CHAR (users.highscore_date, 'DD-MM-YYYY') AS highscore_date
@@ -26,5 +27,7 @@ router.get("/", async function (req, res) {
     users: result.rows,
   });
 });
+
+
 
 module.exports = router;

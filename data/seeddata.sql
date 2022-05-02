@@ -89,15 +89,16 @@ INNER JOIN users
         ON users.id = game_users.users_id
   GROUP BY game.id, users.first_name, users.last_name
 
-
+-- Top highscore in each game
 SELECT DISTINCT ON (game.title) 
-				           game.title,
-				           users.username,
-				           users.highscore,
+                   game.title,
+                   game.url_slug,
+                   users.username,
+                   users.highscore,
            TO_CHAR (users.highscore_date, 'DD-MM-YYYY') AS highscore_date
-			        FROM game
-		    INNER JOIN game_users
-			        	ON game_users.game_id = game.id
-		    INNER JOIN users
-			        	ON users.id = game_users.users_id
-		      ORDER BY game.title, users.highscore DESC;
+              FROM game
+        INNER JOIN game_users
+                ON game_users.game_id = game.id
+        INNER JOIN users
+                ON users.id = game_users.users_id
+          ORDER BY game.title, users.highscore DESC;
