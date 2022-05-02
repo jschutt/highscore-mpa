@@ -35,27 +35,23 @@ INSERT INTO game (
 
 -- Add user
 INSERT INTO users (
-  first_name,
-  last_name,
+  username,
   highscore,
   highscore_date
 ) VALUES
 (
-  'Bruce',
-  'Wayne',
+  'Bruce Wayne',
   579680,
   '2001-05-24'
 );
 
 INSERT INTO users (
-  first_name,
-  last_name,
+  username,
   highscore,
   highscore_date
 ) VALUES
 (
-  'Clark',
-  'Kent',
+  'Clark Kent',
   1904060,
   '2004-02-04'
 );
@@ -66,14 +62,42 @@ VALUES
 (1, 1)
 ;
 
-SELECT users.id,
-       users.first_name,
-       users.last_name,
-	   users.highscore,
-       users.highscore_date
-  FROM users
+    SELECT users.id,
+           users.first_name,
+           users.last_name,
+	         users.highscore,
+           users.highscore_date
+      FROM users
 INNER JOIN game_users
-	ON game_users.users_id = users.id
+      	ON game_users.users_id = users.id
 INNER JOIN game
-	ON game.id = game_users.game_id
- WHERE url_slug = 'pac-man'
+      	ON game.id = game_users.game_id
+     WHERE url_slug = 'pac-man'
+
+ -- Each users highest highscores
+    SELECT game.id,
+	         game.title,
+           game.image_url,
+           game.url_slug,
+		       users.first_name,
+           users.last_name,
+	     MAX (users.highscore)
+	    FROM game
+INNER JOIN game_users
+        ON game_users.game_id = game.id
+INNER JOIN users
+        ON users.id = game_users.users_id
+  GROUP BY game.id, users.first_name, users.last_name
+
+
+SELECT DISTINCT ON (game.title) 
+				           game.title,
+				           users.username,
+				           users.highscore,
+           TO_CHAR (users.highscore_date, 'DD-MM-YYYY') AS highscore_date
+			        FROM game
+		    INNER JOIN game_users
+			        	ON game_users.game_id = game.id
+		    INNER JOIN users
+			        	ON users.id = game_users.users_id
+		      ORDER BY game.title, users.highscore DESC;

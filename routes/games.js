@@ -15,10 +15,9 @@ router.get("/:urlSlug", async function (req, res) {
             game.release_date,
             game.image_url,
             game.url_slug,
-            users.first_name,
-            users.last_name,
+            users.username,
             users.highscore,
-            users.highscore_date
+    TO_CHAR (users.highscore_date, 'DD-MM-YYYY') AS highscore_date
        FROM game
  INNER JOIN game_users
          ON game_users.game_id = game.id
@@ -42,8 +41,7 @@ router.get("/:urlSlug", async function (req, res) {
   };
 
   const users = result.rows.map((user) => ({
-    first_name: user.first_name,
-    last_name: user.last_name,
+    username: user.username,
     highscore: user.highscore,
     highscore_date: user.highscore_date,
   }));

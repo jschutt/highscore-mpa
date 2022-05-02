@@ -5,14 +5,13 @@
     <div class="mb-3"><%= game.release_date %>, <%= game.genre %></div>
     <div class="mb-3"><%= game.description%></div>
   </div>
-  <h2>Highscores</h2>
-  <div class="row mb-3">
+  <h2 class="text-center my-3">Highscores</h2>
+  <div class="row mx-auto">
     <% users.forEach(user=> { %>
-    <div class="mb-3">
-      <p><%= user.first_name%>, <%= user.highscore_date%></p>
+    <div class="user-card mb-2 d-flex justify-content-between">
+      <p><%= user.username%>, <%= user.highscore_date%></p>
       <p><%= user.highscore%></p>
     </div>
-
     <% }) %>
-  </div>
+    </div>
 </section>
