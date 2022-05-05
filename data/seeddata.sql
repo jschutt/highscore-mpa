@@ -59,7 +59,12 @@ INSERT INTO users (
 -- Create relation between game and user
 INSERT INTO game_users (game_id, users_id)
 VALUES 
-(1, 1)
+(1, 1),
+(1, 5),
+(2, 2),
+(2, 3),
+(2, 4),
+(3, 6)
 ;
 
     SELECT users.id,
@@ -74,7 +79,7 @@ INNER JOIN game
       	ON game.id = game_users.game_id
      WHERE url_slug = 'pac-man'
 
- -- Each users highest highscores
+ -- Each users highest cores
     SELECT game.id,
 	         game.title,
            game.image_url,

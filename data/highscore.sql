@@ -28,5 +28,4 @@ CREATE TABLE game_users(
     ON DELETE CASCADE,
   FOREIGN KEY (users_id)
     REFERENCES users (id)
-    ON DELETE CASCADE
 );
