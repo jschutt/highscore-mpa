@@ -10,7 +10,7 @@ router.get("/", async function (req, res) {
                          game.title,
                          game.url_slug,
                          users.player,
-                         users.highscore,
+                 TO_CHAR (users.highscore, '9 999 999 999') AS highscore,
                  TO_CHAR (users.highscore_date, 'DD-MM-YYYY') AS highscore_date
                     FROM game
               INNER JOIN users

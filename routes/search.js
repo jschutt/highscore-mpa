@@ -11,7 +11,7 @@ router.get("/", async function (req, res) {
     SELECT id,
            title,
            genre,
-           release_date,
+   TO_CHAR (game.release_date, 'YYYY') AS release_date,
            image_url,
            url_slug
       FROM game
