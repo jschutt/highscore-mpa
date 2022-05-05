@@ -12,16 +12,18 @@ router.get("/:urlSlug", async function (req, res) {
              game.title,
              game.genre,
              game.description,
-             game.release_date,
+    TO_CHAR (game.release_date, 'YYYY') AS release_date,
              game.image_url,
              game.url_slug,
-             users.username,
+             users.player,
              users.highscore,
      TO_CHAR (users.highscore_date, 'DD-MM-YYYY') AS highscore_date
         FROM game
   INNER JOIN users
           ON game.id = users.game_id
        WHERE game.url_slug = $1
+    ORDER BY users.highscore DESC
+       LIMIT 10;
   `;
 
   const result = await db.query(sql, [urlSlug]);
@@ -39,7 +41,7 @@ router.get("/:urlSlug", async function (req, res) {
   };
 
   const users = result.rows.map((user) => ({
-    username: user.username,
+    player: user.player,
     highscore: user.highscore,
     highscore_date: user.highscore_date,
   }));

@@ -11,7 +11,7 @@ INSERT INTO game (
   'Tetris',
   'Puzzle',
   'Lorum ipsum dolor and so on',
-  1984,
+  '1984-06-06',
   'https://via.placeholder.com/260x260.png?text=Game',
   'tetris'
 );
@@ -28,14 +28,14 @@ INSERT INTO game (
   'Pac-Man',
   'Arcade',
   'Lorum ipsum dolor and so on',
-  1980,
+  '1980-05-22',
   'https://via.placeholder.com/260x260.png?text=Game',
   'pac-man'
 );
 
 -- Add user
 INSERT INTO users (
-  username,
+  player,
   highscore,
   highscore_date,
   game_id
@@ -48,7 +48,7 @@ INSERT INTO users (
 );
 
 INSERT INTO users (
-  username,
+  player,
   highscore,
   highscore_date,
   game_id
@@ -60,8 +60,9 @@ INSERT INTO users (
   2
 );
 
+-- Select all the scores in the 
     SELECT users.id,
-           users.username,
+           users.player,
 	         users.highscore,
            users.highscore_date
       FROM users
@@ -69,7 +70,7 @@ INNER JOIN game
       	ON game.id = users.game_id
      WHERE url_slug = 'pac-man'
 
- -- Each users highest cores
+ -- Each users highest scores
     SELECT game.id,
 	         game.title,
            game.image_url,
@@ -79,13 +80,13 @@ INNER JOIN game
 	    FROM game
 INNER JOIN users
         ON users.game_id = game.id
-  GROUP BY game.id, users.username
+  GROUP BY game.id, users.player
 
 -- Top highscore in each game
 SELECT DISTINCT ON (game.title) 
                    game.title,
                    game.url_slug,
-                   users.username,
+                   users.player,
                    users.highscore,
            TO_CHAR (users.highscore_date, 'DD-MM-YYYY') AS highscore_date
               FROM game

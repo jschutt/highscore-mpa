@@ -4,8 +4,8 @@ CREATE TABLE game (
 	id INTEGER GENERATED ALWAYS AS IDENTITY,
 	title VARCHAR(50) NOT NULL,
 	genre VARCHAR(50) NOT NULL,
-  description VARCHAR(250) NOT NULL,
-	release_date SMALLINT NOT NULL,
+    description VARCHAR(250) NOT NULL,
+	release_date DATE NOT NULL,
 	image_url VARCHAR(250) NOT NULL,
 	url_slug VARCHAR(50) NOT NULL,
 	PRIMARY KEY (id)
@@ -13,11 +13,11 @@ CREATE TABLE game (
 
 CREATE TABLE users (
 	id INTEGER GENERATED ALWAYS AS IDENTITY,
-	username VARCHAR(50) NOT NULL,
-  highscore INTEGER NOT NULL,
+	player VARCHAR(50) NOT NULL,
+    highscore INTEGER NOT NULL,
 	highscore_date DATE NOT NULL,
-  game_id INTEGER,
-  FOREIGN KEY (game_id)
-    REFERENCES game (id),
-	PRIMARY KEY (id)
+    game_id INTEGER,
+    FOREIGN KEY (game_id)
+       REFERENCES game (id),
+	   PRIMARY KEY (id)
 );

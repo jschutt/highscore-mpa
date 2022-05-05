@@ -9,7 +9,7 @@ router.get("/", async function (req, res) {
       SELECT DISTINCT ON (game.title) 
                          game.title,
                          game.url_slug,
-                         users.username,
+                         users.player,
                          users.highscore,
                  TO_CHAR (users.highscore_date, 'DD-MM-YYYY') AS highscore_date
                     FROM game

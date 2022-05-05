@@ -1,0 +1,53 @@
+<form method="post">
+  <div class="row mb-3">
+    <div class="col">
+      <input
+        type="text"
+        name="title"
+        class="form-control"
+        placeholder="Title"
+      />
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      <input
+        type="text"
+        name="image_url"
+        class="form-control"
+        placeholder="Image URL"
+      />
+    </div>
+  </div>
+  <div class="dropdown">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton1"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Genre
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="#">Arcade</a></li>
+      <li><a class="dropdown-item" href="#">Puzzle</a></li>
+      <li><a class="dropdown-item" href="#">Platform</a></li>
+    </ul>
+  </div>
+  <div class="row mb-3">
+    <div class="col">
+      <input
+        type="number"
+        name="release_date"
+        class="form-control"
+        placeholder="Release date"
+      />
+    </div>
+  </div>
+  <button class="btn btn-primary">Add game</button>
+</form>
