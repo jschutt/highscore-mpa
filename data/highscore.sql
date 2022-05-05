@@ -16,16 +16,8 @@ CREATE TABLE users (
 	username VARCHAR(50) NOT NULL,
   highscore INTEGER NOT NULL,
 	highscore_date DATE NOT NULL,
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE game_users(
   game_id INTEGER,
-  users_id INTEGER,
-  PRIMARY KEY (game_id, users_id),
   FOREIGN KEY (game_id)
-    REFERENCES game (id)
-    ON DELETE CASCADE,
-  FOREIGN KEY (users_id)
-    REFERENCES users (id)
+    REFERENCES game (id),
+	PRIMARY KEY (id)
 );

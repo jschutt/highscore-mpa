@@ -6,18 +6,16 @@ router.get("/", async function (req, res) {
   const db = req.app.locals.db;
 
   const sql = `
-    SELECT DISTINCT ON (game.title) 
-                       game.title,
-                       game.url_slug,
-                       users.username,
-                       users.highscore,
-               TO_CHAR (users.highscore_date, 'DD-MM-YYYY') AS highscore_date
-                  FROM game
-            INNER JOIN game_users
-                    ON game_users.game_id = game.id
-            INNER JOIN users
-                    ON users.id = game_users.users_id
-              ORDER BY game.title, users.highscore DESC;
+      SELECT DISTINCT ON (game.title) 
+                         game.title,
+                         game.url_slug,
+                         users.username,
+                         users.highscore,
+                 TO_CHAR (users.highscore_date, 'DD-MM-YYYY') AS highscore_date
+                    FROM game
+              INNER JOIN users
+                      ON users.game_id = game.id
+                ORDER BY game.title, users.highscore DESC;
 `;
 
   const result = await db.query(sql);

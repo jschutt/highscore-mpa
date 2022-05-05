@@ -8,22 +8,20 @@ router.get("/:urlSlug", async function (req, res) {
   const db = req.app.locals.db;
 
   const sql = `
-     SELECT game.id,
-            game.title,
-            game.genre,
-            game.description,
-            game.release_date,
-            game.image_url,
-            game.url_slug,
-            users.username,
-            users.highscore,
-    TO_CHAR (users.highscore_date, 'DD-MM-YYYY') AS highscore_date
-       FROM game
- INNER JOIN game_users
-         ON game_users.game_id = game.id
- INNER JOIN users
-         ON users.id = game_users.users_id
-      WHERE game.url_slug = $1
+      SELECT game.id,
+             game.title,
+             game.genre,
+             game.description,
+             game.release_date,
+             game.image_url,
+             game.url_slug,
+             users.username,
+             users.highscore,
+     TO_CHAR (users.highscore_date, 'DD-MM-YYYY') AS highscore_date
+        FROM game
+  INNER JOIN users
+          ON game.id = users.game_id
+       WHERE game.url_slug = $1
   `;
 
   const result = await db.query(sql, [urlSlug]);
