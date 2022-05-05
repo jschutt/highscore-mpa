@@ -10,40 +10,29 @@
     </div>
   </div>
   <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <label for="description" class="form-label">Description</label>
+    <textarea name="description" class="form-control" id="description" rows="3"></textarea>
   </div>
   <div class="row mb-3">
     <div class="col">
       <input
         type="text"
-        name="image_url"
+        name="imageUrl"
         class="form-control"
         placeholder="Image URL"
       />
     </div>
   </div>
-  <div class="dropdown">
-    <button
-      class="btn btn-secondary dropdown-toggle"
-      type="button"
-      id="dropdownMenuButton1"
-      data-bs-toggle="dropdown"
-      aria-expanded="false"
-    >
-      Genre
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      <li><a class="dropdown-item" href="#">Arcade</a></li>
-      <li><a class="dropdown-item" href="#">Puzzle</a></li>
-      <li><a class="dropdown-item" href="#">Platform</a></li>
-    </ul>
-  </div>
+  <select name="genre" id="genre">
+      <option value="puzzle">Puzzle</option>
+      <option value="platform">Platform</option>
+      <option value="shooter">Shooter</option>
+  </select>
   <div class="row mb-3">
     <div class="col">
       <input
-        type="number"
-        name="release_date"
+        type="text"
+        name="releaseDate"
         class="form-control"
         placeholder="Release date"
       />

@@ -13,7 +13,6 @@ router.get("/", async function (req, res) {
 /* GET http://localhost:3000/admin/score/new */
 router.get("/new", async function (req, res) {
 
-
   res.render("index", {
     title: "Administration"
   });
