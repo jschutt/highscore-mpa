@@ -60,7 +60,7 @@ INSERT INTO users (
   2
 );
 
--- Select all the scores in the 
+-- Select all scores for a game
     SELECT users.id,
            users.player,
 	         users.highscore,

@@ -1,7 +1,19 @@
-<div class="user-card row-4 mb-3">
+<div class="user-card-list mb-2">
   <a href="/games/<%= user.url_slug %>">
-    <div><%= user.title %></div>
-    <div><%= user.highscore %></div>
-    <div><%= user.player %>, <%= user.highscore_date %></div>
+    <% if(user.highscore == null) { %>
+    <div class="user-card">
+      <p class="fw-bolder fs-5"><%= user.title %></p>
+      <p class="fw-bolder fs-5">0</p>
+      <div class="break"></div>
+      <p>No scores registered</p>
+    </div>
+    <% } else { %>
+    <div class="user-card">
+      <p class="fw-bolder fs-5"><%= user.title %></p>
+      <p class="fw-bolder fs-5"><%= user.highscore %></p>
+      <div class="break"></div>
+      <p><%= user.player %>, <%= user.highscore_date %></p>
+    </div>
+    <% } %>
   </a>
 </div>

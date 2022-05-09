@@ -34,7 +34,6 @@ router.get("/new", function (req, res) {
 
   res.render("admin/games/new", {
     title: "Administration"
- 
   });
 });
 
