@@ -1,8 +1,8 @@
-<div class="user-card row-4 mb-3">
-    <a href="/games/<%= game.url_slug%>">
-      <p><%= game.title %></p>
+<a href="/games/<%= game.url_slug%>">
+  <div class="search-card">
+    <p><%= game.title %></p>
+    <img src="<%= game.image_url %>" alt="Picture of <%= game.title %>" />
+    <div class="break"></div>
       <p><%= game.genre %>, <%= game.release_date %></p>
-      <img src="<%= game.image_url %>" alt="Picture of <%= game.title %>">
-    </a>
-</div>
-  
+  </div>
+</a>
