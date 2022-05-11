@@ -2,6 +2,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-family: monospace;
   color: #465a79;
+  background-color: #f7fbff;
 }
 
 a {
@@ -15,7 +16,7 @@ a:hover {
 }
 
 .navbar {
-  background-color: #c6d7e9;
+  background-color: #daeaf7;
 }
 
 .home-section {
@@ -37,18 +38,13 @@ a:hover {
   border-radius: 6px; */
   height: 74px;
   /* transform: translateX(0px); */
-  background: url('https://i.imgur.com/odk8hGy.png') no-repeat;
+  background: url('https://i.imgur.com/JjCnFsK.png') no-repeat;
   background-color: white;
 }
 
 .user-card-list:hover {
   /* transform: translateX(8px); */
-  opacity: 0.9;
-}
-
-.user-card-list:active {
-  padding-top: 4px;
-  background: url('https://i.imgur.com/GPIMvAO.png') no-repeat;
+  opacity: 0.8;
 }
 
 .user-card-list a {
@@ -141,11 +137,36 @@ a:hover {
 }
 
 .search-card {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  border: 1px solid #484a77;
-  border-radius: 5px;
+  width: 815px;
+  margin: auto;
+  display: grid;
+  grid-template-areas: 
+  "title image"
+  "genre image";
+  background: url('https://i.imgur.com/4x3uZ5x.png') no-repeat;
+  background-color: white;
+  height: 140px;
+}
+
+.search-card:hover {
+  opacity: 0.8;
+}
+
+.search-title {
+  grid-area: title;
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.search-genre {
+  grid-area: genre;
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+
+.search-image {
+  grid-area: image;
 }
 
 .search-results {
@@ -158,17 +179,65 @@ a:hover {
 }
 
 .search-card p {
-  font-size: 20px;
   margin-top: auto;
   margin-bottom: auto;
-  padding-left: 15px;
+  padding-left: 20px;
 }
 
 .search-card img {
-  width: 15%;
+  width: 25%;
   margin: 10px 10px 10px auto;
 }
 
 .footer {
-  background-color: #c6d7e9;
+  background-color: #daeaf7;
+}
+
+.game-list-container {
+  width: 815px;
+  margin: 8px auto 40px auto;
+}
+
+.game-list {
+  border: 1px solid black;
+
+}
+
+.admin-btn-container {
+  display: flex;
+  justify-content: start;
+}
+
+.admin-btn-container a {
+  margin: 10px 0px 10px 0px;
+  margin-left: 8px;
+}
+
+.admin-btn-container h1 {
+  padding-top: 10px;
+  margin: 0;
+  margin-right: auto;
+}
+
+.add-game-btn {
+  background: url('https://i.imgur.com/D8yakhu.png') no-repeat;
+  background-color: white;
+  height: 38px;
+  width: 97px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 6px;
+}
+
+.add-game-btn:hover {
+  opacity: 0.8;
+  color: white;
+}
+
+.add-game-btn:active {
+  padding-top: 9px;
+  background: url('https://i.imgur.com/iFqUcGa.png') no-repeat;
 }
