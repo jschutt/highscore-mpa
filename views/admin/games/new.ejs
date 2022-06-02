@@ -1,42 +1,50 @@
 <form method="post">
-  <div class="row mb-3">
-    <div class="col">
-      <input
-        type="text"
-        name="title"
-        class="form-control"
-        placeholder="Title"
-      />
+  <div class="add-new-container">
+    <h1>New game</h1>
+    <div class="row mb-3">
+      <div class="col">
+        <input
+          type="text"
+          name="title"
+          class="form-control"
+          placeholder="Title"
+        />
+      </div>
     </div>
-  </div>
-  <div class="mb-3">
-    <label for="description" class="form-label">Description</label>
-    <textarea name="description" class="form-control" id="description" rows="3"></textarea>
-  </div>
-  <div class="row mb-3">
-    <div class="col">
-      <input
-        type="text"
-        name="imageUrl"
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        name="description"
         class="form-control"
-        placeholder="Image URL"
-      />
+        id="description"
+        rows="3"
+      ></textarea>
     </div>
-  </div>
-  <select name="genre" id="genre">
+    <div class="row mb-3">
+      <div class="col">
+        <input
+          type="text"
+          name="imageUrl"
+          class="form-control"
+          placeholder="Image URL"
+        />
+      </div>
+    </div>
+    <select name="genre" id="genre">
       <option value="puzzle">Puzzle</option>
       <option value="platform">Platform</option>
       <option value="shooter">Shooter</option>
-  </select>
-  <div class="row mb-3">
-    <div class="col">
-      <input
-        type="text"
-        name="releaseDate"
-        class="form-control"
-        placeholder="Release date"
-      />
+    </select>
+    <div class="row mb-3">
+      <div class="col">
+        <input
+          type="text"
+          name="releaseDate"
+          class="form-control"
+          placeholder="Release date"
+        />
+      </div>
     </div>
+    <button class="add-game-btn">Add game</button>
   </div>
-  <button class="add-game-btn">Add game</button>
 </form>

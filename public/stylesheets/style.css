@@ -2,7 +2,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-family: monospace;
   color: #465a79;
-  background-color: #f7fbff;
+  background-color: #fafdff;
 }
 
 a {
@@ -39,7 +39,7 @@ a:hover {
   height: 74px;
   /* transform: translateX(0px); */
   background: url('https://i.imgur.com/JjCnFsK.png') no-repeat;
-  background-color: white;
+  background-color: #fafdff;
 }
 
 .user-card-list:hover {
@@ -230,6 +230,7 @@ a:hover {
   font-weight: bold;
   text-align: center;
   padding-top: 6px;
+  padding-bottom: 13px;
 }
 
 .add-game-btn:hover {
@@ -240,4 +241,9 @@ a:hover {
 .add-game-btn:active {
   padding-top: 9px;
   background: url('https://i.imgur.com/iFqUcGa.png') no-repeat;
+}
+
+.add-new-container {
+  width: 815px;
+  margin: 8px auto 40px auto;
 }

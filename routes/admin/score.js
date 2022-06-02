@@ -4,7 +4,6 @@ var router = express.Router();
 /* GET http://localhost:3000/admin/score */
 router.get("/", async function (req, res) {
 
-
   res.render("admin/score/index", {
     title: "Administration"
   });
